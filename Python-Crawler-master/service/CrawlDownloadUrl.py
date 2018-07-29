@@ -188,7 +188,7 @@ def get_download_url(singleData):
 
 def get_all_second_level_url():
     # 从数据库获取所有要访问的二级地址
-    sql = 'select * from second_url_film_name where id >= 9861;'
+    sql = 'select * from second_url_film_name where id >= 13417;'
     selectResult = selectDBBySql(sql)
     if selectResult is None:
         print("查询所有二级网址失败")
