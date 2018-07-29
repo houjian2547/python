@@ -8,6 +8,8 @@ import random
 from random import choice
 import time
 import socket
+import datetime
+
 
 index_url = 'http://www.ygdy8.com/index.html'
 main_url = 'http://www.ygdy8.com'
@@ -55,6 +57,7 @@ def get_ip():
 
 #获取次页的html
 def get_one_page(url, ips=[]):
+    get_one_page_start_time = datetime.datetime.now()
     print('连接网址开始：' + url)
     #变化ip进行访问
     # ips = get_ip()
@@ -82,7 +85,11 @@ def get_one_page(url, ips=[]):
                 }
     global response
     try:
+        requests_get_start_time = datetime.datetime.now()
         response = requests.get(url, headers=headers)#timeout=3000,  , proxies=proxies代理变换ip
+        requests_get_end_time = datetime.datetime.now()
+        print('requests_get funtion used time/microseconds: ', end='')
+        print((requests_get_end_time - requests_get_start_time).microseconds / 1000)
     except requests.exceptions.ConnectionError:
         print("ConnectionError")
         # if not ips:
@@ -99,7 +106,7 @@ def get_one_page(url, ips=[]):
     if response.status_code != 200:
         print('访问网站失败，status_code:' + response.status_code + '; 网址为：' + url)
         return None
-    print('连接成功: ' + url)
+    print('连接网址成功: ' + url)
     r = response.text
     # print(r)
     # ignore忽略非gb2312编码的字符
@@ -109,24 +116,40 @@ def get_one_page(url, ips=[]):
         content = r.encode('ISO-8859-1').decode(response.apparent_encoding, 'ignore')
     response.close()
     # time.sleep(2)
+    get_one_page_end_time = datetime.datetime.now()
+    print('get_one_page funtion used time/microseconds: ', end='')
+    print((get_one_page_end_time - get_one_page_start_time).microseconds/1000)
     return content
 
 #解析html，获取需要的url和name
 def parse_one_page(html):
+    parse_one_page_start_time = datetime.datetime.now()
     # 用BeautifulSoup解析数据  python3 必须传入参数二'html.parser' 得到一个对象，接下来获取对象的相关属性
     html = BeautifulSoup(html, 'html.parser')
     labelOfAs = html.find_all('a')
     if labelOfAs is None:
         print('获取下载地址为空,return None')
         return None
+    # print('labelOfAs:')
+    # print(labelOfAs)
     for labelOfA in labelOfAs:
+        # print("labelOfA['href']:")
         # print(labelOfA['href'])
         patt = '(^ftp.*\.mkv$)|(^ftp.*\.mp4$)|(^ftp.*\.rmvb)'
         # print(type(labelOfA.string))
-        pattResult = re.search(patt, labelOfA['href'])  #labelOfA['href']
+        global pattResult
+        try:
+            pattResult = re.search(patt, labelOfA['href'])  #labelOfA['href']
+        except Exception:
+            print('获取href属性失败，执行continue')
+            continue
+
         if pattResult is not None:
-            print('获取下载地址成功：')
+            print('获取下载地址成功')
             # print(pattResult.group())
+            parse_one_page_end_time = datetime.datetime.now()
+            print('parse_one_page funtion used time/microseconds: ', end='')
+            print((parse_one_page_end_time - parse_one_page_start_time).microseconds / 1000)
             return pattResult.group()
 
 
@@ -144,29 +167,44 @@ def updateDBById(downloadUrl, id):
     print('            ' + sql)
     dbcrud.operateDB(sql)
 
+def get_download_url(singleData):
+    starttimeAll = datetime.datetime.now()
+    id = singleData[0]
+    secondUrl = singleData[1]
 
-def main():
-    url = 'http://www.ygdy8.com/html/gndy/dyzz/index.html'
-    #从数据库获取要访问的二级地址
-    sql = 'select * from second_url_film_name where id >= 3749;'
+    print('==============================  id:' + str(id) + '  ===========================================')
+    # 获取单页的html
+    ips = []
+    html = get_one_page(secondUrl, ips)
+    singleDownloadUrl = parse_one_page(html)
+    # print(parseResult)
+    if singleDownloadUrl is not None:
+        print('download url: ')
+        print('              ' + singleDownloadUrl)
+        updateDBById(singleDownloadUrl, id)
+    endtimeAll = datetime.datetime.now()
+    print('总耗时/毫秒：', end="")  # end="" 不换行
+    print((endtimeAll - starttimeAll).microseconds / 1000)
+
+def get_all_second_level_url():
+    # 从数据库获取所有要访问的二级地址
+    sql = 'select * from second_url_film_name where id >= 9861;'
     selectResult = selectDBBySql(sql)
     if selectResult is None:
-        print("查询失败")
-        return
+        print("查询所有二级网址失败")
+        return None
+    return selectResult
     # print(selectResult)
-    for data in selectResult:
-        id = data[0]
-        secondUrl = data[1]
 
-        print('id================' + str(id) + '====================')
-        # 获取单页的html
-        ips = []
-        html = get_one_page(secondUrl, ips)
-        singleDownloadUrl = parse_one_page(html)
-        # print(parseResult)
-        if singleDownloadUrl is not None:
-            print('download url : ')
-            print('              ' + singleDownloadUrl)
-            updateDBById(singleDownloadUrl, id)
+def main():
+    # url = 'http://www.ygdy8.com/html/gndy/dyzz/index.html'
 
-main()
+    all_second_level_urls = get_all_second_level_url()
+    if all_second_level_urls is None:
+        return
+
+    for singleSecondUrl in all_second_level_urls:
+        get_download_url(singleSecondUrl)
+
+if __name__ == '__main__':
+    main()

@@ -98,7 +98,7 @@ def getAllSecondUrl(firstPageUrl):
 def main():
     #http://www.ygdy8.com/html/gndy/china/list_4_101.html
     # 获取一个分类
-    sql = 'select * from first_url_type where id >=86'
+    sql = 'select * from first_url_type where type_code < 5'
     selectResult = selectDBBySql(sql)
     print('获取分类地址成功')
     for data in selectResult:
@@ -135,4 +135,5 @@ def main():
 
 
 # typeCode=1 最后一条记录是 http://www.ygdy8.com/html/gndy/dyzz/20100203/24340.html
-main()
+if __name__ == '__main__':
+    main()

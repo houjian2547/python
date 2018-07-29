@@ -109,4 +109,5 @@ def main():
 '''
 运行程序
 '''
-main()
+if __name__ == '__main__':
+    main()
