@@ -36,7 +36,7 @@ class CRUD(object):
             cur.execute(insert_sql)
             # 提交到数据库执行
             conn.commit()
-            print("insert成功")
+            # print("insert成功")
         except Exception:
             print("insert失败:",Exception)
             # 将错误日志输入到目录文件中
@@ -71,6 +71,7 @@ class CRUD(object):
             # 如果发生错误则回滚
             conn.rollback()
         finally:
+            print('mysql连接关闭')
             cur.close()
             conn.close()
 
