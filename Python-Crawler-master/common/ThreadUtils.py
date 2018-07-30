@@ -1,5 +1,5 @@
 import threading
-from time import ctime,sleep
+from time import ctime, sleep
 
 class MyThread (threading.Thread):
     def __init__(self, func, args, name=""):
@@ -27,7 +27,7 @@ if __name__ == '__main__':
         threads = []
         d = {'body.mp3': 3, "Avater.mp4": 5, "You and me.mp3": 6}
 
-        t = MyThread(player, 'Ipod')
+        t = MyThread(player)
         threads.append(t)
         t.start()
 

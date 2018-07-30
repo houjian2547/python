@@ -84,6 +84,7 @@ def get_one_page(url, ips=[]):
                 "User-Agent": choice(uas),
                 }
     global response
+    global getFailCount #记录重试连接次数
     try:
         requests_get_start_time = datetime.datetime.now()
         response = requests.get(url, headers=headers)#timeout=3000,  , proxies=proxies代理变换ip
@@ -91,6 +92,7 @@ def get_one_page(url, ips=[]):
         print('requests_get funtion used time/microseconds: ', end='')
         print((requests_get_end_time - requests_get_start_time).microseconds / 1000)
     except requests.exceptions.ConnectionError:
+        getFailCount += 1
         print("ConnectionError")
         # if not ips:
         #     print("not ip")
@@ -102,6 +104,8 @@ def get_one_page(url, ips=[]):
         #     ips.remove(ip)
         # 重新请求URL
         time.sleep(1)
+        if getFailCount == 5: #重试5次返回None
+            return None
         get_one_page(url, ips)
     if response.status_code != 200:
         print('访问网站失败，status_code:' + response.status_code + '; 网址为：' + url)
@@ -171,11 +175,12 @@ def get_download_url(singleData):
     starttimeAll = datetime.datetime.now()
     id = singleData[0]
     secondUrl = singleData[1]
-
     print('==============================  id:' + str(id) + '  ===========================================')
     # 获取单页的html
     ips = []
     html = get_one_page(secondUrl, ips)
+    if html is None:
+        return None
     singleDownloadUrl = parse_one_page(html)
     # print(parseResult)
     if singleDownloadUrl is not None:
@@ -188,7 +193,7 @@ def get_download_url(singleData):
 
 def get_all_second_level_url():
     # 从数据库获取所有要访问的二级地址
-    sql = 'select * from second_url_film_name where id >= 14080;'
+    sql = 'select * from second_url_film_name where id >= 14720;'
     selectResult = selectDBBySql(sql)
     if selectResult is None:
         print("查询所有二级网址失败")
@@ -204,7 +209,9 @@ def main():
         return
 
     for singleSecondUrl in all_second_level_urls:
-        get_download_url(singleSecondUrl)
+        result = get_download_url(singleSecondUrl)
+        if result is None:
+            continue
 
 if __name__ == '__main__':
     main()
