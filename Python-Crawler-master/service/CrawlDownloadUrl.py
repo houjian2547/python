@@ -203,11 +203,11 @@ def get_all_second_level_url():
 
 def main():
     # url = 'http://www.ygdy8.com/html/gndy/dyzz/index.html'
-
+    # 获取所有二级地址集合
     all_second_level_urls = get_all_second_level_url()
     if all_second_level_urls is None:
         return
-
+    # 循环存储下载地址
     for singleSecondUrl in all_second_level_urls:
         result = get_download_url(singleSecondUrl)
         if result is None:

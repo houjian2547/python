@@ -10,26 +10,19 @@ class MyThread (threading.Thread):
 
     # 　调用start自动执行的函数
     def run(self):
-        self.func(*self.args)
+        self.func(self.args)
 
-def player(song_file,time):
-    for i in range(2):
-        print("start player %s . %s"%(song_file,ctime()) )
-    sleep(time)
+def player(args):
+    print("start player " + str(args))
+    sleep(1)
 
 if __name__ == '__main__':
-    # main()
     threadNum = 5
     while threadNum:
-        MyThread(1, "Thread-" + str(threadNum)).start()
         threadNum -= 1
-
         threads = []
-        d = {'body.mp3': 3, "Avater.mp4": 5, "You and me.mp3": 6}
-
-        t = MyThread(player)
-        threads.append(t)
+        t = MyThread(player, threadNum)
         t.start()
-
+        threads.append(t)
         for i in threads:
             t.join()

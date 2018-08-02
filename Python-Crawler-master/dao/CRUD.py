@@ -8,10 +8,16 @@ import datetime
 class CRUD(object):
 
     def __init__(self):
-        self.host = '127.0.0.1'
+        # self.host = '127.0.0.1'
+        # self.username = 'root'
+        # self.pwd = '123456'
+        # self.db = 'python_test'
+        # self.port = 3306
+        self.host = '39.104.64.133'
         self.username = 'root'
-        self.pwd = '123456'
-        self.db = 'python_test'
+        self.pwd = '2810'
+        self.db = 'film'
+        self.port = 13306
 
     #查询方法
     def select(self, selectSql):
@@ -19,14 +25,14 @@ class CRUD(object):
         # 获取一个数据库连接，注意如果是UTF-8类型的，需要制定数据库
         global conn
         global cur
-        conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=3306, charset='utf8')
+        conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=self.port, charset='utf8')
         cur = conn.cursor()  # 获取一个游标
         try:
             cur.execute(selectSql)
-            cur.close()  # 关闭游标
             data = cur.fetchall()
-            return data
+            cur.close()  # 关闭游标
             print("查询成功")
+            return data
         except Exception:
             print("查询失败")
             cur.close()  # 关闭游标
@@ -40,7 +46,12 @@ class CRUD(object):
         # 获取一个数据库连接，注意如果是UTF-8类型的，需要制定数据库
         global conn
         global cur
-        conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=3306, charset='utf8')
+        try:
+            conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=self.port, charset='utf8')
+        except TimeoutError:
+            print('连接超时，2s后重新请求连接')
+            time.sleep(2)
+            conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=self.port, charset='utf8')
         cur = conn.cursor()  # 获取一个游标
         try:
             # 执行sql语句
@@ -70,11 +81,11 @@ class CRUD(object):
         global conn
         global cur
         try:
-            conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=3306, charset='utf8')
+            conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=self.port, charset='utf8')
         except Exception:
             print('get connect fail!!! exception: socket.timeout: timed out')
             print('get connect again!!!')
-            conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=3306, charset='utf8')
+            conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=self.port, charset='utf8')
         cur = conn.cursor()  # 获取一个游标
         try:
             # 执行sql语句
@@ -105,7 +116,7 @@ class CRUD(object):
         # 获取一个数据库连接，注意如果是UTF-8类型的，需要制定数据库
         global conn
         global cur
-        conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=3306, charset='utf8')
+        conn = pymysql.connect(self.host, self.username, self.pwd, self.db, port=self.port, charset='utf8')
         cur = conn.cursor()  # 获取一个游标
         try:
             # 执行sql语句

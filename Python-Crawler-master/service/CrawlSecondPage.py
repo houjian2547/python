@@ -46,13 +46,16 @@ def parse_one_page(html):
         # print(uri_name_map)
     return uri_name_map
 
-#插入二级网址,名字,typeCode
+# 循环插入二级网址,名字,typeCode
 def insertDB(map, typeCode):
     dbcrud = CRUD()
+    insertNum = 1
     for key in map:
-        insert_sql = "INSERT INTO second_url_film_name (second_url , film_name, type_code ) VALUES ( '" + main_url + key + "', '" + map[key] + "', "+ str(typeCode) +");"
+        print('循环插入第' + str(insertNum) + '条')
+        insert_sql = "INSERT INTO second_url_film_name (second_url , film_name, type_code ) VALUES ( '" + main_url + key + "', '" + map[key] + "', " + str(typeCode) + ");"
         # print(insert_sql)
         dbcrud.insert(insert_sql)
+        insertNum += 1
 
 #查询
 def selectDBBySql(sql):
@@ -79,7 +82,7 @@ def printSelectResult(data):
 def getAllSecondUrl(firstPageUrl):
     html = get_one_page(firstPageUrl)
     dom = BeautifulSoup(html, 'html.parser')
-    content = dom.find_all('option', value = re.compile('list_'))
+    content = dom.find_all('option', value=re.compile('list_'))
     lastPageNo = len(content)
     optionTag = content[lastPageNo - 1]
     print(type(optionTag))
@@ -98,42 +101,49 @@ def getAllSecondUrl(firstPageUrl):
 def main():
     #http://www.ygdy8.com/html/gndy/china/list_4_101.html
     # 获取一个分类
-    sql = 'select * from first_url_type where type_code < 5'
+    sql = 'select * from film.first_url_type where type_code < 5;'
     selectResult = selectDBBySql(sql)
-    print('获取分类地址成功')
+    print('获取分类地址成功,获取条数为', end='')
+    print(len(selectResult))
+    # 按照类型获取二级地址
     for data in selectResult:
         secondUrl = data[1]
         typeCode = data[3]
-        print('获取所有的url开始')
+        print('获取所有的二级地址开始')
         map = getAllSecondUrl(secondUrl)
-        print('获取所有的url end')
+        print('类型' + str(typeCode) + '的所有二级地址为：')
+        print(map)
+        print('获取所有的二级地址结束')
         lastPageNo = map.get('lastPageNo')
         _preUrl_ = map.get('_preUrl_')
-        i = 1
 
+        indexPage = 1 #当前页
         patt = '/\w*/index.html'
         pattResult = re.search(patt, secondUrl).group()
         patt = '/\w*/'
         pattResult = re.search(patt, pattResult).group()
-
-        while i <= lastPageNo:
+        print(pattResult)
+        # 循环页数
+        while indexPage <= lastPageNo:
             # http://www.ygdy8.com/html/gndy/dyzz/list_23_2.html
+            # http://www.ygdy8.com/html/gndy/china/list_4_2.html
             # http://www.ygdy8.com/html/tv/hytv/index.html
-            downLoadUrl = main_url + '/html/' + pattResult + 'list' + _preUrl_ + str(i) + '.html'
-            print("---------------开始下载第" + str(i) + "页/" + str(lastPageNo) + "--------------")
-            print(downLoadUrl)
+            downLoadUrl = main_url + '/html/gndy' + pattResult + 'list' + _preUrl_ + str(indexPage) + '.html'
+            print("---------------开始下载第" + str(indexPage) + "页/" + str(lastPageNo) + "--------------")
+            print('下载地址为：' + downLoadUrl)
             # 获取单页的html
             html = get_one_page(downLoadUrl)
             uri_name_map = parse_one_page(html)
-            print('------------------uri_name_map---------------')
+            print('------------------第' + str(indexPage) + '页所有要存储的地址---------------')
             print(uri_name_map)
             print('循环插入开始')
             insertDB(uri_name_map, typeCode)
-            print('循环插入end')
+            print('循环插入结束')
             # selectDBAndPrint()
-            i += 1
+            indexPage += 1
 
 
 # typeCode=1 最后一条记录是 http://www.ygdy8.com/html/gndy/dyzz/20100203/24340.html
 if __name__ == '__main__':
     main()
+
