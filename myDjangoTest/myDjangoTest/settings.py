@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_web'
+    'django_web',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +120,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # 加入静态文件地址
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+

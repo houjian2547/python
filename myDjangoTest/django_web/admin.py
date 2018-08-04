@@ -16,4 +16,5 @@ class FilmShowAdmin(admin.ModelAdmin):
     list_display = ['id', 'film_name', 'download_ftp_url']
 
 admin.site.register(BlogsPost, BlogsPostAdmin)
+
 admin.site.register(second_url_film_name, FilmShowAdmin)

@@ -166,7 +166,7 @@ def selectDBBySql(sql):
 #修改下载地址
 def updateDBById(downloadUrl, id):
     dbcrud = CRUD()
-    sql = "update second_url_film_name set download_ftp_url = '" + downloadUrl +"' where id = " + str(id)+";"
+    sql = "update django_web_second_url_film_name set download_ftp_url = '" + downloadUrl +"' where id = " + str(id)+";"
     print("update sql: ")
     print('            ' + sql)
     dbcrud.operateDB(sql)
@@ -193,7 +193,7 @@ def get_download_url(singleData):
 
 def get_all_second_level_url():
     # 从数据库获取所有要访问的二级地址
-    sql = 'select * from second_url_film_name where id >= 14720;'
+    sql = 'select * from django_web_second_url_film_name where id >= 15326;'
     selectResult = selectDBBySql(sql)
     if selectResult is None:
         print("查询所有二级网址失败")

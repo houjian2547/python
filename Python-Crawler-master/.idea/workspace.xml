@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa01073a-7473-4f2e-a182-a1b5bc1baec5" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/service/RunThunderDownloadFilm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myDjangoTest/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myDjangoTest/.idea/dataSources/090bfabf-a66e-478d-b7cb-120be9b77013.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myDjangoTest/.idea/dataSources/6d254653-531d-4ef3-b325-0811e26c776a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myDjangoTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myDjangoTest/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myDjangoTest/.idea/myDjangoTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../myDjangoTest/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/ThreadUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/ThreadUtils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/CrawlDownloadUrl.py" beforeDir="false" afterPath="$PROJECT_DIR$/service/CrawlDownloadUrl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myDjangoTest/templates/film.html" beforeDir="false" afterPath="$PROJECT_DIR$/../myDjangoTest/templates/film.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Python_Crawler_master$CrawlDownloadUrl.coverage" NAME="CrawlDownloadUrl Coverage Results" MODIFIED="1532958817310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service" />
+    <SUITE FILE_PATH="coverage/Python_Crawler_master$CrawlDownloadUrl.coverage" NAME="CrawlDownloadUrl Coverage Results" MODIFIED="1533220072715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service" />
     <SUITE FILE_PATH="coverage/Python_Crawler_master$ProgressTest.coverage" NAME="ProgressTest Coverage Results" MODIFIED="1532857555031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/Python_Crawler_master$RunThunderDownloadFilm.coverage" NAME="RunThunderDownloadFilm Coverage Results" MODIFIED="1532965447046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service" />
     <SUITE FILE_PATH="coverage/Python_Crawler_master$CrawlIndexPage.coverage" NAME="CrawlIndexPage Coverage Results" MODIFIED="1532699886384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/service" />
@@ -26,14 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CrawlIndexPage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/CrawlIndexPage.py">
+      <file leaf-file-name="python_test.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/python_test.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3210">
-              <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
-              <folding>
-                <element signature="e#1#16#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -41,59 +44,53 @@
       <file leaf-file-name="CRUD.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/CRUD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
+            <state relative-caret-position="-150">
               <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-              <folding>
-                <element signature="e#1#15#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrawlDownloadUrl.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CrawlDownloadUrl.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/CrawlDownloadUrl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4980">
-              <caret line="176" column="29" selection-start-line="175" selection-start-column="4" selection-end-line="176" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="58">
+              <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunXunlei.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/RunXunlei.py">
+      <file leaf-file-name="Crawl.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/Crawl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="47" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadUtils.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/ThreadUtils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="34" column="20" selection-start-line="29" selection-start-column="8" selection-end-line="34" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RunThunderDownloadFilm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RunThunderDownloadFilm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/RunThunderDownloadFilm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="73" column="36" lean-forward="true" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrawlIndexPage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/CrawlIndexPage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="587">
+              <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrawlSecondPage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/CrawlSecondPage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="122" column="22" lean-forward="true" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -118,6 +115,7 @@
       <find>连接成功</find>
       <find>获取href属性失败</find>
       <find>sleep</find>
+      <find>second_url_film_name</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,9 +133,9 @@
         <option value="$PROJECT_DIR$/service/CrawlIndexPage.py" />
         <option value="$PROJECT_DIR$/dao/CRUD.py" />
         <option value="$PROJECT_DIR$/test/ProgressTest.py" />
-        <option value="$PROJECT_DIR$/service/CrawlDownloadUrl.py" />
         <option value="$PROJECT_DIR$/common/ThreadUtils.py" />
         <option value="$PROJECT_DIR$/service/RunThunderDownloadFilm.py" />
+        <option value="$PROJECT_DIR$/service/CrawlDownloadUrl.py" />
       </list>
     </option>
   </component>
@@ -151,10 +149,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="422" />
-    <option name="y" value="11" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="960" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -198,19 +195,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/ProgressTest.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myDjangoTest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\program\practice\python\python\Python-Crawler-master\test" />
-      <recent name="D:\program\practice\python\python\Python-Crawler-master\common" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\mytest\python_test\dianyingtiantang\Python-Crawler-master\test" />
       <recent name="F:\mytest\python_test\dianyingtiantang\Python-Crawler-master\service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\program\practice\python\python\Python-Crawler-master\test" />
+      <recent name="D:\program\practice\python\python\Python-Crawler-master\service" />
+      <recent name="D:\program\practice\python\python\Python-Crawler-master\dao" />
+      <recent name="D:\program\practice\python\python\Python-Crawler-master\common" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -225,7 +224,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RunThunderDownloadFilm">
+  <component name="RunManager" selected="Python.CrawlDownloadUrl">
     <configuration name="CrawlDownloadUrl" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Python-Crawler-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -330,8 +329,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.RunThunderDownloadFilm" />
         <item itemvalue="Python.CrawlDownloadUrl" />
+        <item itemvalue="Python.RunThunderDownloadFilm" />
         <item itemvalue="Python.ThreadUtils" />
         <item itemvalue="Python.CrawlSecondPage" />
       </list>
@@ -376,20 +375,35 @@
       <option name="project" value="LOCAL" />
       <updated>1532957744161</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="多线程">
+      <created>1532965547056</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1532965547056</updated>
+    </task>
+    <task id="LOCAL-00006" summary="bug update">
+      <created>1533213275793</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1533213275793</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32947975" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3761062" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.46312684" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24093264" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24481866" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -408,24 +422,24 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16968912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20353982" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32884902" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32947975" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.31445086" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" weight="0.32872504" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32884902" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32947975" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,41 +453,12 @@
     <MESSAGE value="优化" />
     <MESSAGE value="sql语句" />
     <MESSAGE value="python run xunlei" />
-    <option name="LAST_COMMIT_MESSAGE" value="python run xunlei" />
+    <MESSAGE value="多线程" />
+    <MESSAGE value="bug update" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/Crawl.py</url>
-          <line>118</line>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/Crawl.py</url>
-          <line>10</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/Crawl.py</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/Crawl.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/Crawl.py</url>
-          <line>115</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/test/Crawl.py</url>
-          <line>140</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -796,41 +781,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Crawl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3555">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/CrawlIndexPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3210">
-          <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/CrawlSecondPage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4050">
-          <caret line="138" column="10" selection-start-line="138" selection-start-column="10" selection-end-line="138" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/ProgressTest.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
           <caret line="34" column="20" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/python_test.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
@@ -841,30 +795,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/CRUD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="e#1#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1655253854/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
           <caret line="5351" column="8" selection-start-line="5351" selection-start-column="8" selection-end-line="5351" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/CrawlDownloadUrl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4980">
-          <caret line="176" column="29" selection-start-line="175" selection-start-column="4" selection-end-line="176" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -888,13 +822,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/common/python_test.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Crawl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/CrawlSecondPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="122" column="22" lean-forward="true" selection-start-line="122" selection-start-column="22" selection-end-line="122" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/RunThunderDownloadFilm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="73" column="36" lean-forward="true" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="80" column="36" lean-forward="true" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/CrawlIndexPage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="587">
+          <caret line="110" column="3" selection-start-line="110" selection-start-column="3" selection-end-line="110" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/CRUD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-150">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/CrawlDownloadUrl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="192" lean-forward="true" selection-start-line="192" selection-end-line="192" />
         </state>
       </provider>
     </entry>
