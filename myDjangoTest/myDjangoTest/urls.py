@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^index/', index),
     url(r'^blog/', blog_index),
-    url(r'^film/', film_show),
+    url(r'^film/$', film_show),
     url(r'^film_name_search/', film_name_search),
 ]
 

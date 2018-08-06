@@ -13,6 +13,7 @@ class BlogsPost(models.Model):
 class second_url_film_name(models.Model):
     id = models.BigIntegerField
     film_name = models.CharField(max_length=150)
+    type_code = models.IntegerField(max_length=50)
     download_ftp_url = models.CharField(max_length=150)
 
 

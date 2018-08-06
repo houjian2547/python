@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Starter Template for Bootstrap</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">film</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+<div class="container" style="margin-top: 50px;">
+
+    <div style="margin-top:100px;text-align:center">
+
+        <div class="input-group" style="margin-top:30px;margin-bottom:30px;text-align:center">
+            <span class="input-group-addon" onclick="Parsefunc()"> 电影名搜索 </span>
+            <input type="text" class="form-control" placeholder="电影名字" id="filmName">
+        </div>
+
+        <table class="table table-bordered table-hover table-condensed" id="film_table">
+            <tr style=" font-weight:bold;font-size:18px">
+                <td>ID</td>
+                <td>TYPE</td>
+                <td>FILM NAME</td>
+                <td>DOWNLOAD URL</td>
+            </tr>
+            {% block content %}
+            {% endblock %}
+        </table>
+    </div>
+
+</div><!-- /.container -->
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    function Parsefunc() {
+        var filmName = $('#filmName').val();
+        $.get("/film_name_search", {'filmName': filmName}, function (listString) {
+            {#alert(typeof listString)#}
+            list_object = JSON.parse(listString);
+            {#alert(typeof list_object)#}
+            console.log(list_object);
+            $("#film_table tr:gt(0)").remove();//删除老数据
+            var html;
+            for (i = 0; i < list_object.length; i++) {
+                console.log(list_object[i].fields.film_name);
+
+                var type_code_name
+                switch (list_object[i].fields.type_code) {
+                    case 1:
+                        type_code_name = '最新影片';
+                        break;
+                    case 2:
+                        type_code_name = '国内电影';
+                        break;
+                    case 3:
+                        type_code_name = '欧美电影';
+                        break;
+                    case 4:
+                        type_code_name = '日韩电影';
+                        break;
+                }
+
+                html += '<tr class=\"active\">' +
+                    '<td>' + list_object[i].pk + '</td>' +
+                    '<td>' + type_code_name + '</td>' +
+                    '<td>' + list_object[i].fields.film_name + '</td>' +
+                    '<td>' + list_object[i].fields.download_ftp_url + '</td>' +
+                    "</tr>";
+            }
+            $("#film_table").append(html);//将新数据填充到table
+        });
+
+        /*
+        $.ajax({
+            url: "/film_name_search?filmName=" + filmName,
+            type: "GET",
+            success: function (response) {
+                alert('成功');
+                console.log(response.message)
+                var film_list = response.data;
+                json = JSON.parse(response);
+                console.log(json.fields)
+            },
+            //data:JSON.stringify({
+            //    'data':dataname
+            contentType: "application/json",
+            error: function (response) {
+                alert('失败');
+            }
+        })
+        */
+
+
+    }
+</script>
+</body>
+</html>
